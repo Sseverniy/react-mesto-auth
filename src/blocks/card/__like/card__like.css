@@ -1,0 +1,12 @@
+.card__like {
+  margin: 5px 0 0 0;
+  cursor: pointer;
+  background-image: url(../../../images/heart.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 20.76px;
+  height: 20px;
+  padding: 0;
+  border-style: none;
+  background-color: white;
+}
