@@ -14,6 +14,7 @@
 @import url(./blocks/popup/popup.css);
 @import url(./blocks/error/error.css);
 @import url(./blocks/label/label.css);
+@import url(./blocks/authorization/authorization.css);
 
 /* подключаем элементы*/
 @import url(./blocks/profile/__avatar/profile__avatar.css);
@@ -37,6 +38,10 @@
 @import url(./blocks/popup/__picture/popup__picture.css);
 @import url(./blocks/popup/__image-container/popup__image-container.css);
 @import url(./blocks/popup/__image-heading/popup__image-heading.css);
+@import url(./blocks/authorization/__heading/authorization__heading.css);
+@import url(./blocks/authorization/__button/authorization__button.css);
+@import url(./blocks/authorization/__input/authorization__input.css);
+@import url(./blocks/authorization/__signin-link/authorization__signin-link.css);
 
 /* подключаем модификаторы */
 @import url(./blocks/popup/_opened/popup_opened.css);
