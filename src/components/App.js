@@ -1,5 +1,5 @@
 import React from "react";
-import {Route, Switch, Redirect, BrowserRouter, useHistory} from "react-router-dom";
+import {Route, Switch, Redirect, BrowserRouter} from "react-router-dom";
 import Header from "./Header.js";
 import Login from "./Login.js";
 import Page from "./Page.js";
@@ -45,6 +45,9 @@ function App() {
   function handleSignOut() {
     localStorage.removeItem('jwt');
     setLoggedIn(false);
+    setUserData({
+      email:''
+    });
   }
 
   React.useEffect(() => {

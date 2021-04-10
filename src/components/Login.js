@@ -1,5 +1,4 @@
 import React from "react";
-import Header from "./Header.js";
 import * as userAuth from '../utils/userAuth.js';
 import { useHistory } from 'react-router-dom';
 

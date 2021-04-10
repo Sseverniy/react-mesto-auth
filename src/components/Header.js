@@ -1,6 +1,6 @@
 import React from 'react';
 import logo from '../images/logo.svg';
-import {BrowserRouter, Route, Link, Switch, Redirect, useHistory} from 'react-router-dom';
+import {BrowserRouter, Route, Link, Switch, Redirect} from 'react-router-dom';
 
 function Header({userData, loggedIn, onSignOut}){
   // const [buttonText, setButtonText] = React.useState('');
