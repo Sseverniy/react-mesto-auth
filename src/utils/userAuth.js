@@ -10,13 +10,12 @@ export const register = (email, password) => {
     body: JSON.stringify({email, password})
   })
   .then((res) => {
-    if(res.status !== 400){
+    if(res.ok){
       return res.json();
     } else {
       return Promise.reject(`Ошибка: некорректно заполнено одно из полей`)
     }
   })
-  .then(data => data);
 }
 
 export const authorization = (email, password) => {

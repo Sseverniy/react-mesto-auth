@@ -1,5 +1,5 @@
 import React from "react";
-import {Route, Switch, Redirect, BrowserRouter} from "react-router-dom";
+import {Route, Switch, Redirect, useHistory} from "react-router-dom";
 import Header from "./Header.js";
 import Login from "./Login.js";
 import Page from "./Page.js";
@@ -15,18 +15,20 @@ function App() {
   const [userData, setUserData] = React.useState({
     email:''
   });
-  // const history = useHistory();
+  const history = useHistory();
 
   function tokenCheck() {
     if (localStorage.getItem('jwt')) {
       let jwt = localStorage.getItem('jwt');
-      console.log(jwt);
+      // console.log(jwt);
 
       userAuth.getData(jwt)
         .then((res) => {
           if(res) {
             setLoggedIn(true);
-            setUserData(res.data.email);
+            setUserData({
+              email:res.data.email 
+            });
           }
           // history.push('/mesto-react');
           
@@ -52,11 +54,7 @@ function App() {
 
   React.useEffect(() => {
     tokenCheck();
-  }, []);
-
-  React.useEffect(() => {
-    console.log(userData)
-  }, [userData])
+  }, [loggedIn]);
 
   return (
     <div className="App page">
@@ -65,7 +63,6 @@ function App() {
         userData={userData}
         onSignOut={handleSignOut}
       />
-      <BrowserRouter>
         <Switch>
           <Route path="/sign-up">
             <Register />
@@ -87,7 +84,6 @@ function App() {
             )}
           </Route>
         </Switch>
-      </BrowserRouter>
     </div>
   );
 }

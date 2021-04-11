@@ -1,6 +1,6 @@
 import React from 'react';
 import logo from '../images/logo.svg';
-import {BrowserRouter, Route, Link, Switch, Redirect} from 'react-router-dom';
+import {Route, Link, Switch, Redirect} from 'react-router-dom';
 
 function Header({userData, loggedIn, onSignOut}){
   // const [buttonText, setButtonText] = React.useState('');
@@ -22,11 +22,11 @@ function Header({userData, loggedIn, onSignOut}){
   //   }
   // }, [loggedIn])
 
+
   return (
     <header className="header">
       <img className="logo" src={logo} alt="Логотип Место" />
       <div className="header__auth">
-        <BrowserRouter>
           <Switch>
             <Route path="/mesto-react">
               <p className="header__user-email">{userData.email}</p>
@@ -52,7 +52,6 @@ function Header({userData, loggedIn, onSignOut}){
               )}
             </Route>
           </Switch>
-        </BrowserRouter>
       </div>
     </header>
   );
